@@ -1,0 +1,14 @@
+<h1> Employee Show Page </h1>
+
+
+<h3> <%= @employee.first_name%> <%= @employee.last_name %> </h3>
+<ul> 
+<li> Alias: <%= @employee.alias %> </li>
+<li> Title: <%= @employee.title %> </li> 
+<li> Office: <%= @employee.office %> </li> 
+<li> Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %> </li>
+</ul> <br>
+
+<%= link_to "Edit Employee Information", edit_employee_path(@employee) %>
+
+

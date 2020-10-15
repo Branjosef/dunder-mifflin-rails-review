@@ -1,3 +1,10 @@
 <h1> New Employee Sign Up </h1>
 
+<% if flash[:my_errors] %>
+    <h4>Errors:</h4>
+    <% flash[:my_errors].each do |error| %>
+        <p><%= error %></p>
+    <% end %>
+<% end %>
+
 <%= render 'form' %>

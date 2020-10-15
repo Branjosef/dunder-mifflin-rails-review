@@ -22,7 +22,8 @@ def create
   if @employee.save
     redirect_to @employee 
   else 
-    render 'new'
+    flash[:my_errors] = @employee.errors.full_messages
+            redirect_to new_employee_path
   end
 end
 
@@ -31,7 +32,8 @@ def update
   if @employee.update(employee_params)
     redirect_to @employee 
   else
-    render 'edit'
+    flash[:my_errors] = @employee.errors.full_messages
+            redirect_to edit_employee_path
   end
 end
 

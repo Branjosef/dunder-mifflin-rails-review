@@ -1,5 +1,13 @@
 <h1> Edit Employee Information </h1>
 
+
+<% if flash[:my_errors] %>
+    <h4>Errors:</h4>
+    <% flash[:my_errors].each do |error| %>
+        <p><%= error %></p>
+    <% end %>
+<% end %>
+
 <%= render 'form' %><br>
 
 <%= link_to "Return back to show page", employee_path(@employee) %>
